@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成都恒诺智数科技有限公司 - 世界级数据标注解决方案提供商</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        // Tailwind 自定义配置
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A4DA2', // 主深蓝
+                        secondary: '#1E88E5', // 次浅蓝
+                        accent: '#00BFFF', // 高亮蓝
+                        dark: '#052F5F', // 深色背景
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .bg-gradient-blue {
+                background: linear-gradient(135deg, #0A4DA2 0%, #1E88E5 100%);
+            }
+            .transition-all-300 {
+                transition: all 0.3s ease;
+            }
+        }
+    </style>
+    <!-- 引入谷歌字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-800 bg-white">
+    <!-- 导航栏 -->
+    <header class="fixed w-full top-0 z-50 bg-white/95 shadow-sm transition-all-300" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="logo.png" 
+                         alt="恒诺智数 Logo" class="h-12 w-auto">
+                    <span class="ml-2 text-xl font-bold text-primary hidden sm:inline-block">HANNO DATA</span>
+                </div>
+                
+                <!-- 桌面端导航 -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-primary font-medium hover:text-accent transition-all-300">首页</a>
+                    <a href="#about" class="text-gray-700 font-medium hover:text-accent transition-all-300">关于我们</a>
+                    <a href="#services" class="text-gray-700 font-medium hover:text-accent transition-all-300">服务能力</a>
+                    <a href="#cooperation" class="text-gray-700 font-medium hover:text-accent transition-all-300">合作模式</a>
+                    <a href="#cases" class="text-gray-700 font-medium hover:text-accent transition-all-300">成功案例</a>
+                    <a href="#contact" class="text-gray-700 font-medium hover:text-accent transition-all-300">联系我们</a>
+                </nav>
+                
+                <!-- 移动端菜单按钮 -->
+                <button class="md:hidden text-gray-700 hover:text-primary" id="menuBtn">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden bg-white shadow-lg absolute w-full" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="#home" class="block py-2 text-primary font-medium">首页</a>
+                <a href="#about" class="block py-2 text-gray-700 font-medium">关于我们</a>
+                <a href="#services" class="block py-2 text-gray-700 font-medium">服务能力</a>
+                <a href="#cooperation" class="block py-2 text-gray-700 font-medium">合作模式</a>
+                <a href="#cases" class="block py-2 text-gray-700 font-medium">成功案例</a>
+                <a href="#contact" class="block py-2 text-gray-700 font-medium">联系我们</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区 -->
+    <section id="home" class="pt-32 pb-20 bg-gradient-blue text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight text-shadow mb-6">
+                        世界级数据标注<br>
+                        <span class="text-accent">赋能全球智能产业</span>
+                    </h1>
+                    <p class="text-lg md:text-xl opacity-90 mb-8 max-w-lg">
+                        成都恒诺智数科技有限公司，专注为头部企业提供高精度数据标注服务，同时为中小企业提供灵活的标注解决方案，助力AI产业高效发展。
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-white text-primary font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-all-300 text-center">
+                            立即合作
+                        </a>
+                        <a href="#services" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition-all-300 text-center">
+                            了解服务
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <img src="https://picsum.photos/id/180/600/400" alt="数据标注可视化" class="rounded-lg shadow-2xl w-full max-w-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 企业介绍 -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">关于恒诺智数</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    成都恒诺智数科技有限公司（HANNO DATA）是国内领先的专业数据标注服务商，致力于为全球AI企业提供高精度、高效率、高安全的标注解决方案。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 企业愿景 -->
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition-all-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-globe text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-dark">企业愿景</h3>
+                    <p class="text-gray-600">
+                        成为全球顶尖的数据标注服务提供商，用精准的数据赋能人工智能产业的每一次创新。
+                    </p>
+                </div>
+
+                <!-- 核心优势 -->
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition-all-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-trophy text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-dark">核心优势</h3>
+                    <p class="text-gray-600">
+                        拥有专业标注团队、标准化流程、严格的质量管控体系，可承接千万级数据量的标注项目。
+                    </p>
+                </div>
+
+                <!-- 服务理念 -->
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition-all-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-handshake-o text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-dark">服务理念</h3>
+                    <p class="text-gray-600">
+                        大客户标准化服务，小客户灵活化定制，以客户需求为中心，提供全周期的标注服务支持。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 企业实力 -->
+            <div class="mt-16 bg-white rounded-xl shadow-md p-8">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-1/2 mb-8 lg:mb-0">
+                        <h3 class="text-2xl font-bold text-primary mb-4">企业实力</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                <span>ISO9001质量体系认证，ISO27001信息安全管理体系认证</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                <span>覆盖图像、语音、文本、视频全类型数据标注</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                <span>百人级专业标注团队，平均从业经验3年以上</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                <span>与多家头部科技企业建立长期战略合作关系</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                <span>支持定制化标注工具开发，适配各类业务场景</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://picsum.photos/id/3/600/400" alt="企业实力展示" class="rounded-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务能力 -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">核心服务能力</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    我们提供全品类、高精度的数据标注服务，满足不同行业、不同规模企业的多样化需求。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 图像标注 -->
+                <div class="bg-gray-50 rounded-xl p-6 hover:bg-primary/5 transition-all-300">
+                    <div class="text-accent text-3xl mb-4">
+                        <i class="fa fa-picture-o"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-dark">图像标注</h3>
+                    <p class="text-gray-600 mb-4">
+                        包含2D框、3D框、语义分割、关键点标注、多边形标注等，精度可达99.9%。
+                    </p>
+                    <a href="#contact" class="text-primary font-medium hover:text-accent">
+                        了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- 语音标注 -->
+                <div class="bg-gray-50 rounded-xl p-6 hover:bg-primary/5 transition-all-300">
+                    <div class="text-accent text-3xl mb-4">
+                        <i class="fa fa-microphone"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-dark">语音标注</h3>
+                    <p class="text-gray-600 mb-4">
+                        语音转写、情绪标注、声纹标注、语音分割，支持多语种、多口音识别标注。
+                    </p>
+                    <a href="#contact" class="text-primary font-medium hover:text-accent">
+                        了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- 文本标注 -->
+                <div class="bg-gray-50 rounded-xl p-6 hover:bg-primary/5 transition-all-300">
+                    <div class="text-accent text-3xl mb-4">
+                        <i class="fa fa-file-text-o"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-dark">文本标注</h3>
+                    <p class="text-gray-600 mb-4">
+                        NER命名实体识别、文本分类、情感分析、关键词提取、句法分析标注。
+                    </p>
+                    <a href="#contact" class="text-primary font-medium hover:text-accent">
+                        了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- 视频标注 -->
+                <div class="bg-gray-50 rounded-xl p-6 hover:bg-primary/5 transition-all-300">
+                    <div class="text-accent text-3xl mb-4">
+                        <i class="fa fa-video-camera"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-dark">视频标注</h3>
+                    <p class="text-gray-600 mb-4">
+                        目标跟踪、行为分析、帧标注、时序标注，支持4K高清视频全帧标注。
+                    </p>
+                    <a href="#contact" class="text-primary font-medium hover:text-accent">
+                        了解详情 <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 服务流程 -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold text-center text-primary mb-12">标准化服务流程</h3>
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex flex-col items-center mb-8 md:mb-0">
+                        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">1</div>
+                        <h4 class="text-lg font-semibold mb-2">需求沟通</h4>
+                        <p class="text-gray-600 text-center max-w-xs">深入了解客户标注需求、质量标准、交付周期</p>
+                    </div>
+                    <div class="hidden md:block text-accent text-4xl">
+                        <i class="fa fa-long-arrow-right"></i>
+                    </div>
+                    <div class="flex flex-col items-center mb-8 md:mb-0">
+                        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">2</div>
+                        <h4 class="text-lg font-semibold mb-2">方案制定</h4>
+                        <p class="text-gray-600 text-center max-w-xs">定制标注方案、报价、人员配置计划</p>
+                    </div>
+                    <div class="hidden md:block text-accent text-4xl">
+                        <i class="fa fa-long-arrow-right"></i>
+                    </div>
+                    <div class="flex flex-col items-center mb-8 md:mb-0">
+                        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">3</div>
+                        <h4 class="text-lg font-semibold mb-2">数据标注</h4>
+                        <p class="text-gray-600 text-center max-w-xs">专业团队按标准执行标注，实时质量监控</p>
+                    </div>
+                    <div class="hidden md:block text-accent text-4xl">
+                        <i class="fa fa-long-arrow-right"></i>
+                    </div>
+                    <div class="flex flex-col items-center mb-8 md:mb-0">
+                        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">4</div>
+                        <h4 class="text-lg font-semibold mb-2">质量验收</h4>
+                        <p class="text-gray-600 text-center max-w-xs">多轮质检，确保标注精度符合客户要求</p>
+                    </div>
+                    <div class="hidden md:block text-accent text-4xl">
+                        <i class="fa fa-long-arrow-right"></i>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">5</div>
+                        <h4 class="text-lg font-semibold mb-2">交付售后</h4>
+                        <p class="text-gray-600 text-center max-w-xs">按时交付数据，提供售后技术支持</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 合作模式 -->
+    <section id="cooperation" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">灵活的合作模式</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    我们为不同规模的企业提供定制化合作方案，满足大厂规模化需求，适配小公司灵活化需求。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- 大厂合作 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all-300">
+                    <div class="bg-primary text-white p-6">
+                        <h3 class="text-2xl font-bold mb-2">头部企业合作方案</h3>
+                        <p class="opacity-90">为大型科技企业提供规模化、标准化、高安全的数据标注服务</p>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa fa-star text-accent mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">专属项目团队</span>：为大客户配置专属标注团队、项目经理、质量管控人员
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-star text-accent mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">规模化交付</span>：支持千万级数据量的标注需求，保障交付周期
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-star text-accent mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">数据安全保障</span>：签订严格保密协议，部署私有化标注环境
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-star text-accent mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">长期战略合作</span>：建立年度合作框架，提供优惠的价格体系
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-star text-accent mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">定制化工具</span>：可根据客户需求定制专属标注工具
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="mt-6 inline-block bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-primary/90 transition-all-300">
+                            咨询大厂合作方案
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 小公司合作 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all-300">
+                    <div class="bg-secondary text-white p-6">
+                        <h3 class="text-2xl font-bold mb-2">中小企业合作方案</h3>
+                        <p class="opacity-90">为中小科技企业提供灵活、高效、低成本的数据标注服务</p>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa fa-star text-accent mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">灵活计费</span>：支持按条、按小时、按项目多种计费方式
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-star text-accent mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">快速交付</span>：小批量数据最快24小时内完成标注交付
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-star text-accent mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">低门槛合作</span>：无最小订单量限制，支持试标注
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-star text-accent mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">技术支持</span>：免费提供标注规范制定、数据格式转换服务
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-star text-accent mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-semibold">弹性扩容</span>：业务增长时可快速提升标注产能
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="mt-6 inline-block bg-secondary text-white font-semibold py-2 px-6 rounded-lg hover:bg-secondary/90 transition-all-300">
+                            咨询中小企业合作方案
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功案例 -->
+    <section id="cases" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">成功案例</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    我们已为多个行业的客户提供了高质量的数据标注服务，获得了客户的高度认可。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 案例1 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden hover:shadow-xl transition-all-300">
+                    <img src="https://picsum.photos/id/1/600/400" alt="自动驾驶数据标注案例" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-dark">自动驾驶数据标注</h3>
+                        <p class="text-gray-600 mb-4">
+                            为阿里项目车企提供道路场景图像标注服务，完成1000万+帧图像标注，标注精度99.8%。
+                        </p>
+                        <div class="flex items-center text-gray-500 text-sm">
+                            <span class="mr-4"><i class="fa fa-tag mr-1"></i> 图像标注</span>
+                            <span><i class="fa fa-calendar mr-1"></i> 2024年</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 案例2 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden hover:shadow-xl transition-all-300">
+                    <img src="https://picsum.photos/id/2/600/400" alt="智能语音助手标注案例" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-dark">智能语音助手标注</h3>
+                        <p class="text-gray-600 mb-4">
+                            为数据堂大厂提供多语种语音转写标注，完成5000小时语音数据标注，准确率98.5%。
+                        </p>
+                        <div class="flex items-center text-gray-500 text-sm">
+                            <span class="mr-4"><i class="fa fa-tag mr-1"></i> 语音标注</span>
+                            <span><i class="fa fa-calendar mr-1"></i> 2025年</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 案例3 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden hover:shadow-xl transition-all-300">
+                    <img src="https://picsum.photos/id/3/600/400" alt="电商文本标注案例" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-dark">电商文本标注</h3>
+                        <p class="text-gray-600 mb-4">
+                            为奥鹏平台提供商品文本分类标注，完成200万条文本标注，交付周期仅15天。
+                        </p>
+                        <div class="flex items-center text-gray-500 text-sm">
+                            <span class="mr-4"><i class="fa fa-tag mr-1"></i> 文本标注</span>
+                            <span><i class="fa fa-calendar mr-1"></i> 2026年</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block border-2 border-primary text-primary font-semibold py-3 px-8 rounded-lg hover:bg-primary hover:text-white transition-all-300">
+                    查看更多案例
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">联系我们</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-gray-300 max-w-2xl mx-auto">
+                    无论您是大型企业还是中小公司，我们都期待与您合作，为您提供专业的数据标注解决方案。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- 联系信息 -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8">联系方式</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa fa-map-marker text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium mb-1">公司地址</h4>
+                                <p class="text-gray-300">四川省成都市锦江区新光华街7号航天科技大厦2208</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa fa-phone text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium mb-1">联系电话</h4>
+                                <p class="text-gray-300">18290346037</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa fa-envelope text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium mb-1">电子邮箱</h4>
+                                <p class="text-gray-300">mamingyan@hannodata.cn</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa fa-clock-o text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium mb-1">工作时间</h4>
+                                <p class="text-gray-300">周一至周五 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 社交媒体 -->
+                    <div class="mt-10">
+                        <div class="flex space-x-4">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 联系表单 -->
+                <div class="bg-gray-800 rounded-xl p-8">
+                    <h3 class="text-2xl font-semibold mb-6">立即咨询</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-300 mb-2">您的姓名</label>
+                            <input type="text" id="name" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-all-300" placeholder="请输入您的姓名">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="company" class="block text-gray-300 mb-2">公司名称</label>
+                            <input type="text" id="company" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-all-300" placeholder="请输入公司名称">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-300 mb-2">联系电话</label>
+                            <input type="tel" id="phone" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-all-300" placeholder="请输入联系电话">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-300 mb-2">电子邮箱</label>
+                            <input type="email" id="email" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-all-300" placeholder="请输入电子邮箱">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 mb-2">需求描述</label>
+                            <textarea id="message" rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent transition-all-300" placeholder="请简要描述您的标注需求、数据类型、数据量等"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-accent text-white font-semibold py-3 px-6 rounded-lg hover:bg-accent/90 transition-all-300">
+                            提交咨询
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-950 text-gray-400 py-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <img src="logo.png" 
+                         alt="恒诺智数 Logo" class="h-10 w-auto mb-2">
+                    <p>成都恒诺智数科技有限公司 © 2026 版权所有</p>
+                </div>
+                <div class="text-sm">
+                    <p>蜀ICP备(服务器暂未部署)号 | 营业执照：91510104MAKFTABH1C</p>
+                    <p class="mt-1">本网站所有内容均受著作权法保护，未经许可不得转载</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            // 切换图标
+            const icon = menuBtn.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动端菜单
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
